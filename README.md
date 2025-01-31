@@ -1,30 +1,24 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+DandyPantry is a food storage inventory tracking app developed using Android Studio with Kotlin. This app helps users add items to their inventory including a name, description, quantity, and unit cost. Users can also increase or decrease their stock, remove items, or edit other information.
 
-{Provide a description of your app.  Describe how to use the app.}
+Below is a video demo of the app.
 
-{Describe your purpose for creating this app.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the app running and a walkthrough of the code.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](http://youtube.com)
 
 # Development Environment
 
-{Describe the tools that you used to develop the app}
-
-{Describe the programming language that you used and any libraries.}
+Android Studio - IDE
+Kotlin - Programming Language
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Android Studio](https://developer.android.com/studio)
+* [Jetpack Compose Tutorials](https://developer.android.com/courses/android-basics-compose/course)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+Some things I need to fix, improve, and add in the future are:
+* Adding a local database, so users can save their data
+* Connect to a cloud database, so users can access their data in a different platform
+* Develop a web app version
