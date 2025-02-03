@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DandyPantry</string>
+    <string name="add_new_item_title">Add New Item</string>
+    <string name="ID_item_label">Item ID</string>
     <string name="name_item_label">Name of Item</string>
     <string name="quantity_item_label">Quantity</string>
     <string name="cost_item_label">Unit Cost</string>

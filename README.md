@@ -1,6 +1,7 @@
 # Overview
 
-DandyPantry is a food storage inventory tracking app developed using Android Studio with Kotlin. This app helps users add items to their inventory including a name, description, quantity, and unit cost. Users can also increase or decrease their stock, remove items, or edit other information.
+DandyPantry is a food storage inventory tracking app developed using Android Studio with Kotlin. This app helps users add items to their inventory including a name, description, quantity, and unit cost. 
+Currently, the app has one page where users can type in the details of the item they wish to add to the inventory.
 
 Below is a video demo of the app.
 
@@ -10,6 +11,7 @@ Below is a video demo of the app.
 
 Android Studio - IDE
 Kotlin - Programming Language
+Jetpack Compose - Library
 
 # Useful Websites
 
@@ -19,6 +21,5 @@ Kotlin - Programming Language
 # Future Work
 
 Some things I need to fix, improve, and add in the future are:
-* Adding a local database, so users can save their data
-* Connect to a cloud database, so users can access their data in a different platform
-* Develop a web app version
+* Add more pages such as Homepage, Search Page, Edit Page, Delete Page, Inventory Page and a navigation structure
+* Connect to a database like SQL Lite for creating, reading, updating, and deleting data on an inventory item
