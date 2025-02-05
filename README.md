@@ -9,9 +9,9 @@ Below is a video demo of the app.
 
 # Development Environment
 
-Android Studio - IDE
-Kotlin - Programming Language
-Jetpack Compose Library
+* Android Studio - IDE
+* Kotlin - Programming Language
+* Jetpack Compose Library
 
 # Useful Websites
 
