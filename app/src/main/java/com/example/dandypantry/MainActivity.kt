@@ -114,6 +114,7 @@ fun AddItemPage() {
 
             Spacer(modifier = Modifier.width(8.dp))
 
+            // quantity text field
             EditTextField(
                 label = R.string.quantity_item_label,
                 keyboardOptions = KeyboardOptions.Default.copy(
@@ -127,6 +128,7 @@ fun AddItemPage() {
 
             Spacer(modifier = Modifier.width(8.dp))
 
+            // PLUS quantity button
             Button(
                 onClick = {
                     val currentQuantity = quantityInput.toIntOrNull() ?: 0
@@ -140,6 +142,7 @@ fun AddItemPage() {
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Item Cost Field
         EditTextField(
             label = R.string.cost_item_label,
             keyboardOptions = KeyboardOptions.Default.copy(
@@ -154,6 +157,7 @@ fun AddItemPage() {
         )
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Item Notes field
         EditTextField(
             label = R.string.notes_item_label,
             keyboardOptions = KeyboardOptions.Default.copy(
@@ -166,6 +170,8 @@ fun AddItemPage() {
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
         )
+
+        // Add Button
         Button (
             onClick = { },
             modifier = Modifier
@@ -188,7 +194,7 @@ fun EditTextField(
         value = value,
         onValueChange = onValueChange,
         singleLine = true,
-        label ={ Text(stringResource(label)) },
+        label = { Text(stringResource(label)) },
         keyboardOptions = keyboardOptions,
         modifier = modifier
     )
