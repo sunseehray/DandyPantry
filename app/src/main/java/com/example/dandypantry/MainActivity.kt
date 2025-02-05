@@ -6,11 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -52,7 +54,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun AddItemPage() {
-    var itemIDInput by remember { mutableStateOf("") }
     var nameInput by remember { mutableStateOf("") }
     var quantityInput by remember { mutableStateOf("") }
     var costInput by remember { mutableStateOf("") }
@@ -64,6 +65,7 @@ fun AddItemPage() {
             .padding(horizontal = 40.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // heading
         Spacer(modifier = Modifier.height(20.dp))
         Text(
             text = stringResource(R.string.add_new_item_title),
@@ -75,18 +77,7 @@ fun AddItemPage() {
         )
         Spacer(modifier = Modifier.height(20.dp))
 
-        EditTextField(
-            label = R.string.ID_item_label,
-            keyboardOptions = KeyboardOptions.Default.copy(
-                keyboardType = KeyboardType.Text,
-                imeAction = ImeAction.Next
-            ),
-            value = itemIDInput,
-            onValueChange = { itemIDInput = it },
-
-        )
-        Spacer(modifier = Modifier.height(20.dp))
-
+        // item name input field
         EditTextField(
             label = R.string.name_item_label,
             keyboardOptions = KeyboardOptions.Default.copy(
@@ -101,20 +92,57 @@ fun AddItemPage() {
         )
         Spacer(modifier = Modifier.height(20.dp))
 
-        EditTextField(
-            label = R.string.quantity_item_label,
-            keyboardOptions = KeyboardOptions.Default.copy(
-                keyboardType = KeyboardType.Number,
-                imeAction = ImeAction.Next
-            ),
-            value = quantityInput,
-            onValueChange = { quantityInput = it },
+        // item quantity row
+        Row(
             modifier = Modifier
                 .padding(bottom = 32.dp)
-                .fillMaxWidth()
-        )
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // MINUS button for quantity field
+            Button(
+                onClick = {
+                    val currentQuantity = quantityInput.toIntOrNull() ?: 0
+                    if (currentQuantity > 0) {
+                        quantityInput = (currentQuantity - 1).toString()
+                    }
+                },
+                modifier = Modifier.weight(1f)
+            ) {
+                Text(text = "-")
+            }
+
+            Spacer(modifier = Modifier.width(8.dp))
+
+            // quantity text field
+            EditTextField(
+                label = R.string.quantity_item_label,
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    keyboardType = KeyboardType.Number,
+                    imeAction = ImeAction.Next
+                ),
+                value = quantityInput,
+                onValueChange = { quantityInput = it },
+                modifier = Modifier.weight(2f)
+            )
+
+            Spacer(modifier = Modifier.width(8.dp))
+
+            // PLUS quantity button
+            Button(
+                onClick = {
+                    val currentQuantity = quantityInput.toIntOrNull() ?: 0
+                    quantityInput = (currentQuantity + 1).toString()
+                },
+                modifier = Modifier.weight(1f)
+            ) {
+                Text(text = "+")
+            }
+        }
+
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Item Cost Field
         EditTextField(
             label = R.string.cost_item_label,
             keyboardOptions = KeyboardOptions.Default.copy(
@@ -129,6 +157,7 @@ fun AddItemPage() {
         )
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Item Notes field
         EditTextField(
             label = R.string.notes_item_label,
             keyboardOptions = KeyboardOptions.Default.copy(
@@ -142,6 +171,7 @@ fun AddItemPage() {
                 .fillMaxWidth()
         )
 
+        // Add Button
         Button (
             onClick = { },
             modifier = Modifier
@@ -164,9 +194,9 @@ fun EditTextField(
         value = value,
         onValueChange = onValueChange,
         singleLine = true,
-        label ={ Text(stringResource(label)) },
+        label = { Text(stringResource(label)) },
         keyboardOptions = keyboardOptions,
-        modifier = Modifier
+        modifier = modifier
     )
 }
 
